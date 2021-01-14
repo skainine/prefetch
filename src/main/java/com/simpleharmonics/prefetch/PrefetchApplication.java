@@ -40,11 +40,11 @@ public class PrefetchApplication implements CommandLineRunner {
                 int choice = Integer.parseInt(input);
                 switch (choice) {
                     case 1: {
-                        showAllArchives();
+                        next = true;
                         break;
                     }
                     case 2: {
-                        next = true;
+                        showAllArchives();
                         break;
                     }
                     default: {
@@ -79,6 +79,7 @@ public class PrefetchApplication implements CommandLineRunner {
             System.out.println("-------------------------------------------");
             System.out.println("Title: " + pageEntity.getTitle());
             System.out.println("Link: " + pageEntity.getLink());
+            System.out.println("Body: " + pageEntity.getBody());
         }
     }
 
@@ -94,8 +95,8 @@ public class PrefetchApplication implements CommandLineRunner {
 
     private void showMenus() {
         System.out.println("-------------------------------------------");
-        System.out.println("1. Peek the Achieved data");
-        System.out.println("2. Achieve New Data");
+        System.out.println("1. Archive New Data");
+        System.out.println("2. Peek the Archived data");
         System.out.print("Enter your number corresponding to your choice: ");
     }
 
@@ -149,8 +150,7 @@ public class PrefetchApplication implements CommandLineRunner {
                 } else {
                     return null;
                 }
-            }
-            if (rawLink.startsWith("/")) {
+            } else if (rawLink.startsWith("/")) {
                 processedLink.append(TARGET_WEBSITE);
                 processedLink.append(rawLink);
             }
