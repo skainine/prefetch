@@ -1,4 +1,4 @@
-### Prefetch is simple text based web crawler written using Spring Boot to archive entire source code of websites into a database.
+### Prefetch is simple text based web crawler written using Spring Boot to archive entire text of websites into a database.
 
 It uses [jsoup](https://github.com/jhy/jsoup) and [PostgreSQL](https://www.postgresql.org/).
 
