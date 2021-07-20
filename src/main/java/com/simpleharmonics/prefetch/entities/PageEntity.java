@@ -1,61 +1,51 @@
 package com.simpleharmonics.prefetch.entities;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.sql.Timestamp;
 
 @Entity(name = "pages")
 public class PageEntity {
 
     @Id
     @Column(name = "link", columnDefinition = "text")
-    private String link;
+    public String link;
 
     @Column(name = "title", columnDefinition = "text")
-    private String title;
-
-    @Column(name = "time", columnDefinition = "text")
-    private String time;
+    public String title;
 
     @Column(name = "body", columnDefinition = "text")
-    private String body;
+    public String body;
 
-    public String getTitle() {
-        return title;
-    }
+    @CreationTimestamp
+    @Column(name = "created")
+    public Timestamp created;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    @UpdateTimestamp
+    @Column(name = "updated")
+    public Timestamp updated;
 
     public String getLink() {
         return link;
     }
 
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+    public String getTitle() {
+        return title;
     }
 
     public String getBody() {
         return body;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public Timestamp getCreated() {
+        return created;
     }
 
-    public String toString() {
-        return "Title: " + getTitle() + "\n" +
-                "Time: " + getTime() + "\n" +
-                "Link: " + getLink() + "\n" +
-                "Body: " + getBody() + "\n";
+    public Timestamp getUpdated() {
+        return updated;
     }
 }
