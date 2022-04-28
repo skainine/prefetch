@@ -4,7 +4,7 @@ It uses [jsoup](https://github.com/jhy/jsoup) and [PostgreSQL](https://www.postg
 
 # Configuration
 ### Requirements
-* Java 11
+* Java 8
 * PostgreSQL
 * Any IDE which supports Java
 
